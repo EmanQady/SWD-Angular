@@ -11,7 +11,6 @@ import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
 export class InitformComponent implements OnInit {
 
   id: number;
-  firstForm: FormGroup;
   editMode = false;
   showForm = true;
 
@@ -44,7 +43,7 @@ export class InitformComponent implements OnInit {
     let budget = '';
     let scope = '';
 
-    this.firstForm = new FormGroup({
+    firstForm = new FormGroup({
       'title': new FormControl(title, [Validators.required]),
       'startDate': new FormControl(startDate, [Validators.required]),
       'endDate': new FormControl(endDate, [Validators.required]),

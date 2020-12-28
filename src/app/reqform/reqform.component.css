@@ -43,3 +43,7 @@ form{
     display: block;
     text-align: center;
 }
+
+.help-block{
+    color: red;
+}

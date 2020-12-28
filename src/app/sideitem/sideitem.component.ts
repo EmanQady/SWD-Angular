@@ -9,9 +9,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class SideitemComponent implements OnInit {
 
   @Input() initforms: {
-    id: number, title: string, startDate: string, endDate: string, proObj: string,
-    proManager: string, proInfo: string, proScope: string
-  };
+    id: number; title: string; startDate: string; endDate: string; proObj: string;
+    proManager: string; proInfo: string; proScope: string;
+  } | undefined;
 
   constructor(private route: ActivatedRoute,
     private router: Router) { }
