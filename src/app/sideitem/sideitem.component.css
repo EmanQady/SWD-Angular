@@ -1,0 +1,8 @@
+.sidenav-content {
+    display: flex;
+    width: 370px;
+    height: fit-content;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    margin: 10px;
+    white-space: normal;
+  }

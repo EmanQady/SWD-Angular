@@ -1,0 +1,48 @@
+.container{
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 540px;
+    top: 200px;
+    height: 600px;
+    width: 880px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.bar{
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    height: 40px;
+    width: 880px;
+    margin: -2px;
+}
+
+.closebtn{
+    left: 550px;
+}
+
+.savebtn{
+    width: 100px;
+    margin: 20px;
+    margin-left: 400px;
+    position: absolute;
+    top: 500px;
+}
+
+h4{
+    text-align: center;
+}
+
+.addDoc{
+    margin-left: 110px;
+}
+
+.files{
+    width: 240px;
+    display: inline-block;
+    margin: 5px;
+    margin-bottom: 70px;
+}
+
+.formContainer{
+    display: block;
+    text-align: center;
+}

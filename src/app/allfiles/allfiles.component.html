@@ -1,0 +1,12 @@
+<title>Page 2</title>
+<button mat-raised-button class="spacer btn" color="accent" (click)="showImages()">
+    All Images (Diagrams & UI) entered in SDLC Tab
+</button>
+
+<br><br>
+<mat-divider class="divider spacer"></mat-divider>
+<br>
+
+<div *ngIf="display">
+    <side></side>
+</div>

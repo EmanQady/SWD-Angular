@@ -1,0 +1,53 @@
+<main></main>
+<div *ngIf="showForm" class="container">
+    <div class="bar">
+        <header style="font-weight: bold; margin-left: 5px;">Software Requirements Specification (SRS)</header>
+        <button mat-raised-button class="closebtn" color="warn" (click)="onClose()">Close</button>
+    </div>
+    <br>
+    <div class="formContainer">
+        <form [formGroup]="secondForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label>Introduction</label>
+                <input type="text" class="form-control" formControlName="intro" required />
+            </div>
+
+            <div class="form-group">
+                <label>Purpose of software being developed</label>
+                <input type="text" class="form-control" formControlName="purpose" required />
+            </div>
+
+            <div class="form-group">
+                <label>Intended Audience</label>
+                <input type="text" class="form-control" formControlName="audience" required />
+            </div>
+
+            <div class="form-group">
+                <label>Overall description of the software</label>
+                <input type="text" class="form-control" formControlName="descript" required />
+            </div>
+
+            <div class="form-group">
+                <span class="label">
+                    <label>System Features and Requirements:
+                        1) Functional Requirements
+                        2) Non-functional Requirements
+                        3) External Interface Requirements
+                    </label>
+                </span>
+                <textarea rows="6" class="form-control" formControlName="features" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Use Case</label>
+                <input type="file" (change)="onFileSelected($event)" class=" form-control" formControlName="use"
+                    required />
+                <img *ngIf="url" [src]="url" width="100" height="100" alt="">
+            </div>
+
+            <button mat-raised-button class="btn" color="primary" type="submit">Save</button>
+            <button mat-raised-button class="btn" type="reset">Reset</button>
+
+        </form>
+    </div>
+</div>

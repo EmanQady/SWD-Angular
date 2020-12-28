@@ -1,0 +1,45 @@
+.container{
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 540px;
+    top: 200px;
+    height: 600px;
+    width: 880px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.bar{
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    height: 40px;
+    width: 880px;
+    margin: -2px;
+}
+
+.closebtn{
+    top: -15px;
+    left: 800px;
+}
+
+.btn{
+    width: 100px;
+    margin: 20px;
+    margin-left: 70px;
+}
+
+label{
+    width: 240px;
+    display: inline-block;
+    margin: 5px;
+    margin-bottom: 20px;
+}
+form{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    text-align: left;
+}
+.formContainer{
+    display: block;
+    text-align: center;
+}

@@ -1,0 +1,14 @@
+.spacer{
+    margin-left: 1cm;
+}
+
+.divider{
+    color: black;
+    border-color: black;
+    width: 400px;
+
+}
+
+.btn{
+    width: 400px;
+}

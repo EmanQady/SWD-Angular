@@ -1,0 +1,30 @@
+<main></main>
+<div class="container">
+    <div class="bar">
+        <label style="font-weight: bold; margin-left: 5px;">System Design Document (SDD)</label>
+        <button mat-raised-button class="closebtn" color="warn" (click)="onClose()">Close</button>
+    </div>
+
+    <h4>Insert documents as Images (UML Diagrams, Database Design, User Interface Design)</h4>
+    <div>
+        <button mat-raised-button class="addDoc" color="accent" type="button" (click)="onAddDoc()">
+            Add New Document
+        </button>
+    </div>
+
+    <div [formGroup]="thirdForm">
+        <div *ngFor="let control of documents.controls; let i = index">
+            <div class="formContainer">
+                <label class="files">File Name:</label>
+                <input [formControlName]="i" />
+                <input type="file" (change)="onFileSelected($event)" class=" form-control" formControlName="use"
+                    required />
+                <img *ngIf="urls[i]" [src]="urls[i]" width="50" height="50" alt="">
+
+            </div>
+        </div>
+    </div>
+
+    <button mat-raised-button class="savebtn" color="primary" type="submit" [disabled]="!urls">Save</button>
+
+</div>
