@@ -10,9 +10,9 @@ import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class InitformComponent implements OnInit {
 
-  id: number;
-  editMode = false;
+  id!: number;
   showForm = true;
+  arrData: any = [];
 
   // initform: {
   //   id: number, title: string, startDate: string, endDate: string, proObj: string,
@@ -23,16 +23,15 @@ export class InitformComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.params
-      .subscribe(
-        (params: Params) => {
-          this.id = +params['id'];
-          this.editMode = params['id'] != null;
-          this.initializeForm();
-        }
-      );
+    // this.route.params
+    //   .subscribe(
+    //     (params: Params) => {
+    //       this.id = +params['id'];
+    //       this.editMode = params['id'] != null;
+    //       this.initializeForm();
+    //     }
+    //   );
   }
-
 
   initializeForm() {
     let title = '';
@@ -42,31 +41,24 @@ export class InitformComponent implements OnInit {
     let manager = '';
     let budget = '';
     let scope = '';
-
-    firstForm = new FormGroup({
-      'title': new FormControl(title, [Validators.required]),
-      'startDate': new FormControl(startDate, [Validators.required]),
-      'endDate': new FormControl(endDate, [Validators.required]),
-      'objectives': new FormControl(objectives, [Validators.required]),
-      'manager': new FormControl(manager, [Validators.required]),
-      'budget': new FormControl(budget, [Validators.required]),
-      'scope': new FormControl(scope, [Validators.required])
-    });
-
   }
 
+  firstForm = new FormGroup({
+    title: new FormControl('', [Validators.required]),
+    startDate: new FormControl('', [Validators.required]),
+    endDate: new FormControl('', [Validators.required]),
+    objectives: new FormControl('', [Validators.required]),
+    manager: new FormControl('', [Validators.required]),
+    budget: new FormControl('', [Validators.required]),
+    scope: new FormControl('', [Validators.required])
+  });
 
-  onSubmit() {
-    if (this.editMode) {
-      this.StorageService.onInitformUpdate(this.id, this.firstForm.value);
-    }
-    else {
-      this.StorageService.onInitformAdded(this.firstForm.value.title, this.firstForm.value.startDate,
-        this.firstForm.value.endDate, this.firstForm.value.proObj, this.firstForm.value.proManager,
-        this.firstForm.value.proInfo, this.firstForm.value.proScope);
-      this.firstForm.reset();
-    }
 
+  onSubmit(title: any, sDate: any, eDate: any, obj: any, mngr: any, bud: any, scope: any) {
+    this.StorageService.onInitformAdded(title, sDate, eDate, obj, mngr, bud, scope)
+    {
+      console.log(this.StorageService.initforms);
+    }
   }
 
   onClose() {
