@@ -1,5 +1,5 @@
 import { StorageService } from './../services/storage.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -9,14 +9,13 @@ import { Subscription } from 'rxjs';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
-export class DetailsComponent implements OnInit {
-
-  id: number;
-  sub: Subscription;
+export class DetailsComponent implements OnInit, OnDestroy {
+  id: number | undefined;
+  sub: Subscription = new Subscription;
   initforms: {
-    id: number, title: string, startDate: string, endDate: string, proObj: string,
-    proManager: string, proInfo: string, proScope: string
-  };
+    id: number; title: string; startDate: string; endDate: string; proObj: string;
+    proManager: string; proInfo: string; proScope: string;
+  } | undefined;
 
   constructor(private route: ActivatedRoute,
     private storageService: StorageService,

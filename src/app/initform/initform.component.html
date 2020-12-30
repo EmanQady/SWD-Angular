@@ -9,18 +9,16 @@
     <form [formGroup]="firstForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label class="lbl">Project Title</label>
-        <input type="text" class="form-control field" formControlName="title" required />
+        <input #title type="text" class="form-control field" formControlName="title" required />
         <span *ngIf="
           !firstForm.get('title').valid && firstForm.get('title').touched" class="help-block">
-            <span *ngIf="firstForm.get('title').errors['required']">This field is required!</span>
+          <span *ngIf="firstForm.get('title').errors['required']">This field is required!</span>
         </span>
       </div>
 
       <div class="form-group">
         <label>Project Start Date</label>
-        <input matInput [matDatepicker]="picker1" class="form-control" formControlName="startDate" required />
-        <mat-datepicker #picker1></mat-datepicker>
-        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <input #sDate type="date" class="form-control" formControlName="startDate" required />
         <span *ngIf="
           !firstForm.get('startDate').valid && firstForm.get('startDate').touched" class="help-block">
             <span *ngIf="firstForm.get('startDate').errors['required']">This field is required!</span>
@@ -29,9 +27,7 @@
 
       <div class="form-group">
         <label>Project End Date</label>
-        <input matInput [matDatepicker]="picker2" class="form-control" formControlName="endDate" required />
-        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-        <mat-datepicker #picker2></mat-datepicker>
+        <input #eDate type="date" class="form-control" formControlName="endDate" required />
         <span *ngIf="
           !firstForm.get('endDate').valid && firstForm.get('endDate').touched" class="help-block">
             <span *ngIf="firstForm.get('endDate').errors['required']">This field is required!</span>
@@ -40,24 +36,24 @@
 
       <div class="form-group">
         <label>Project Objectives</label>
-        <input type="text" class="form-control" formControlName="objectives" required />
+        <input #obj type="text" class="form-control" formControlName="objectives" required />
         <span *ngIf="
           !firstForm.get('objectives').valid && firstForm.get('objectives').touched" class="help-block">
-            <span *ngIf="firstForm.get('objectives').errors['required']">This field is required!</span>
+          <span *ngIf="firstForm.get('objectives').errors['required']">This field is required!</span>
         </span>
       </div>
       <div class="form-group">
         <label>Project Manager</label>
-        <input type="text" class="form-control" formControlName="manager" required />
+        <input #mngr type="text" class="form-control" formControlName="manager" required />
         <span *ngIf="
           !firstForm.get('manager').valid && firstForm.get('manager').touched" class="help-block">
-            <span *ngIf="firstForm.get('manager').errors['required']">This field is required!</span>
+          <span *ngIf="firstForm.get('manager').errors['required']">This field is required!</span>
         </span>
       </div>
 
       <div class="form-group">
         <label>Budget Information</label>
-        <input type="text" class="form-control" formControlName="budget" required />
+        <input #bud type="text" class="form-control" formControlName="budget" required />
         <span *ngIf="
           !firstForm.get('budget').valid && firstForm.get('budget').touched" class="help-block">
           <span *ngIf="firstForm.get('budget').errors['required']">This field is required!</span>
@@ -66,10 +62,10 @@
 
       <div class="form-group">
         <label>Project Scope Statements</label>
-        <input type="text" class="form-control" formControlName="scope" required />
+        <input #scope type="text" class="form-control" formControlName="scope" required />
         <span *ngIf="
           !firstForm.get('scope').valid && firstForm.get('scope').touched" class="help-block">
-            <span *ngIf="firstForm.get('scope').errors['required']">This field is required!</span>
+          <span *ngIf="firstForm.get('scope').errors['required']">This field is required!</span>
         </span>
       </div>
 

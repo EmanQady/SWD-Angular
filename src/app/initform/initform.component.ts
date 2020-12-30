@@ -59,9 +59,7 @@ export class InitformComponent implements OnInit {
 
   onSubmit() {
      console.log(this.firstForm.value);
-     this.StorageService.formValues$ = this.firstForm.valueChanges;
     if (this.editMode) {
-      
       this.StorageService.onInitformUpdate(this.id, this.firstForm.value);
     }
     else {
