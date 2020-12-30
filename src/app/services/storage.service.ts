@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
-
+import { SideitemComponent} from './../sideitem/sideitem.component';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class StorageService {
-
+  formValues$: Observable<any>;
   constructor() { }
-
-  initforms: {
+ initforms: {
     id: number, title: string, startDate: string, endDate: string, proObj: string,
     proManager: string, proInfo: string, proScope: string
   }[] = [];
+
 
   reqforms: {
     id: number, intro: string, purpose: string, audience: string,
@@ -23,19 +25,19 @@ export class StorageService {
 
 
   onInitformAdded(title: string, startDate: string, endDate: string, proObj: string,
-    proManager: string, proInfo: string, proScope: string) {
+manager: string, proInfo: string, proScope: string) {
     this.initforms.push({
       id: this.initforms.length + 1,
       title: title,
       startDate: startDate,
       endDate: endDate,
       proObj: proObj,
-      proManager: proManager,
+      proManager: manager,
       proInfo: proInfo,
       proScope: proScope
     });
-  }
 
+  }
   onInitformUpdate(id: number, initform: any) {
     this.initforms[id - 1].title = initform.title;
     this.initforms[id - 1].startDate = initform.startDate;

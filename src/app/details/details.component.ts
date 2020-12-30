@@ -25,7 +25,7 @@ export class DetailsComponent implements OnInit {
   ngOnInit() {
     this.sub = this.route.params.subscribe((params: Params) => {
       this.id = +params['id'];
-      this.initforms = this.storageService.getFormById(this.id);
+      this.initforms = this.storageService.getFormById(this.id)!;
     });
 
   }

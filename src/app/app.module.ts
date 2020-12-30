@@ -15,7 +15,8 @@ import { ReqformComponent } from './reqform/reqform.component';
 import { DesignformComponent } from './designform/designform.component';
 import { SideitemComponent } from './sideitem/sideitem.component';
 import { DetailsComponent } from './details/details.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StorageService } from './services/storage.service';
 const appRoutes: Routes = [
   { path: '', component: MainComponent, },
   { path: 'sdlc', component: MainComponent, },
@@ -45,12 +46,15 @@ const appRoutes: Routes = [
     BrowserModule,
     MaterialModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes)
   ],
   exports: [
     RouterModule
   ],
-  providers: [],
+  providers: [
+    StorageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

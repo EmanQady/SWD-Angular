@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import {StorageService} from './../services/storage.service'
 
 @Component({
   selector: 'sideitem',
@@ -7,16 +9,20 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./sideitem.component.css']
 })
 export class SideitemComponent implements OnInit {
-
-  @Input() initforms: {
+  initforms: {
     id: number, title: string, startDate: string, endDate: string, proObj: string,
     proManager: string, proInfo: string, proScope: string
   };
-
+  message: string;
   constructor(private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    private storageSevice: StorageService ) {
 
-  ngOnInit(): void {
+     }
+
+  ngOnInit() {
+    
   }
+
 
 }

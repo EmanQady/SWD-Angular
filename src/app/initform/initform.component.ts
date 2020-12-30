@@ -58,13 +58,16 @@ export class InitformComponent implements OnInit {
 
 
   onSubmit() {
+     console.log(this.firstForm.value);
+     this.StorageService.formValues$ = this.firstForm.valueChanges;
     if (this.editMode) {
+      
       this.StorageService.onInitformUpdate(this.id, this.firstForm.value);
     }
     else {
       this.StorageService.onInitformAdded(this.firstForm.value.title, this.firstForm.value.startDate,
-        this.firstForm.value.endDate, this.firstForm.value.proObj, this.firstForm.value.proManager,
-        this.firstForm.value.proInfo, this.firstForm.value.proScope);
+        this.firstForm.value.endDate, this.firstForm.value.objectives, this.firstForm.value.manager,
+        this.firstForm.value.budget, this.firstForm.value.scope);
       this.firstForm.reset();
     }
 
